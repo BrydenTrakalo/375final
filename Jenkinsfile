@@ -27,23 +27,23 @@ pipeline {
             }
         }
         
-        stage('Building image') {
-            steps{
-                script {
-                    dockerImage = docker.build registry
-                }
-            }
-        }
+        // stage('Building image') {
+        //     steps{
+        //         script {
+        //             dockerImage = docker.build registry
+        //         }
+        //     }
+        // }
 
-        stage('Deploy image') {
-            steps{
-                script {
-                    docker.withRegistry( '', registryCredential) {
-                        dockerImage.push()
-                    }
-                }
-            }
-        }
+        // stage('Deploy image') {
+        //     steps{
+        //         script {
+        //             docker.withRegistry( '', registryCredential) {
+        //                 dockerImage.push()
+        //             }
+        //         }
+        //     }
+        // }
     }
 
 }
