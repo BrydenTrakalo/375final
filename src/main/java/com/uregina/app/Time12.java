@@ -75,20 +75,12 @@ public class Time12
 	{
 		int difference=0;
 		//Todo: add your code here
-		AmPm pm = AmPm.pm;
-		int t1Time = 0;
-		if (t1.am_pm == pm){
-			t1Time += 12*60;
-		}
-		t1Time += (t1.hours * 60) + t1.minutes;
+		Time24 t1_24 = t1.toTime24();
+		Time24 t2_24 = t2.toTime24();
 
-		int t2Time = 0;
-		if (t2.am_pm == pm){
-			t2Time += 12*60;
-		}
-		t2Time += (t2.hours * 60) + t2.minutes;
-
-		difference = t1Time - t2Time;
+		int t1Minutes = t1_24.getHours()*60 + t1_24.getMinutes();
+		int t2Minutes = t2_24.getHours()*60 + t2_24.getMinutes();
+		difference = t1Minutes - t2Minutes;
 		// end of your code
 		return difference;
 	}
