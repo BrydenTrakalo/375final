@@ -17,7 +17,7 @@ public class Time24Test{
         int hours = 4;
         int minutes = 20;
         AmPm am_pm = AmPm.am;
-        time = time.toTime24(hours, minutes, am_pm);
+        time = Time24.toTime24(hours, minutes, am_pm);
 
         try{
             expected = new Time24(4, 20);
@@ -38,7 +38,7 @@ public class Time24Test{
         int hours = 4;
         int minutes = 20;
         AmPm am_pm = AmPm.pm;
-        time = time.toTime24(hours, minutes, am_pm);
+        time = Time24.toTime24(hours, minutes, am_pm);
 
         try{
             expected = new Time24(16, 20);
