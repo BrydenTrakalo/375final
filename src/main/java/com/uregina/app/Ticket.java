@@ -69,7 +69,7 @@ public class Ticket
             System.out.println( "\tMore than one day between DateTimes" );
         }
 		catch(NegativeTimeException e){
-            System.out.println( "\tNegative time on flight" );
+            System.out.println( "\tNegative time on layover" );
         }
 		if(maxLayoverTime < totalLayoverTime){
 			return false;
