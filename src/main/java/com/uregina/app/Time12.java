@@ -19,7 +19,7 @@ public class Time12
 	*/
     public Time12 (int hours, int minutes, AmPm am_pm) throws InvalidTimeException
     {
-		if(hours<1||hours>=12) throw new InvalidTimeException();
+		if(hours<1||hours>12) throw new InvalidTimeException();
 		if(minutes<0||minutes>=60) throw new InvalidTimeException();
         this.hours=hours;
 		this.minutes=minutes;
@@ -75,7 +75,20 @@ public class Time12
 	{
 		int difference=0;
 		//Todo: add your code here
+		AmPm pm = AmPm.pm;
+		int t1Time = 0;
+		if (t1.am_pm == pm){
+			t1Time += 12*60;
+		}
+		t1Time += (t1.hours * 60) + t1.minutes;
 
+		int t2Time = 0;
+		if (t2.am_pm == pm){
+			t2Time += 12*60;
+		}
+		t2Time += (t2.hours * 60) + t2.minutes;
+
+		difference = t1Time - t2Time;
 		// end of your code
 		return difference;
 	}

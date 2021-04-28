@@ -51,7 +51,18 @@ public class DateTime
 	{
 		int diff=0;
 		//Todo: add your code here
-
+		if (!Date.equal(d1.getDate(), d2.getDate())){
+			if ((d1.getDate().nextDate().getDay() != d2.getDate().getDay()) && (d2.getDate().nextDate().getDay() != d1.getDate().getDay())){
+				throw new MoreThanOneDayException();
+			}
+			if(d1.getDate().nextDate().getDay() == d2.getDate().getDay()){
+				diff -= 24*60;
+			}
+			else{
+				diff += 24*60;
+			}
+		}
+		diff += Time12.subtract(d1.getTime(), d2.getTime());
 		//end of your code
 		return diff;
 	}

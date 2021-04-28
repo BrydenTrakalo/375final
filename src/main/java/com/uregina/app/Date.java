@@ -123,7 +123,26 @@ public class Date
 	public static boolean lessThan(Date d1,Date d2)
 	{
 		//Todo: Add your code here
+		if (d1.year > d2.year){
+			return false;
+		}
+		if (d1.year < d2.year){
+			return true;
+		}
 		
+		if (d1.month > d2.month){
+			return false;
+		}
+		if (d1.month < d2.month){
+			return true;
+		}
+
+		if (d1.day > d2.day){
+			return false;
+		}
+		if (d1.day < d2.day){
+			return true;
+		}
 		return false;
 	}
 }

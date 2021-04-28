@@ -48,8 +48,27 @@ public class Time24
 	public static Time24 toTime24(int hours, int minutes, AmPm am_pm)
 	{
 		Time24 time=null;
+		AmPm am = AmPm.am;
+		AmPm pm = AmPm.pm;
 		//Todo : add your code here
-
+		if(am_pm == am){
+			try{
+				time = new Time24(hours, minutes);
+			}
+			catch(InvalidTimeException e){
+				System.out.println( "\tInvalid Time" );
+				return null;
+			}
+		}
+		if (am_pm == pm){
+			try{
+				time = new Time24(hours+12, minutes);
+			}
+			catch(InvalidTimeException e){
+				System.out.println( "\tInvalid Time" );
+				return null;
+			}
+		}
 
 		// End of your code
 		return time;
