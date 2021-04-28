@@ -1,7 +1,7 @@
 package com.uregina.app;
 import com.uregina.exceptions.*;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertThrows;
+//import static org.junit.Assert.assertThrows;
 
 import org.junit.Test;
 
